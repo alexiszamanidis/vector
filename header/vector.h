@@ -58,6 +58,9 @@
         printf("Wrong position < %d >.\n",position);                                                                        \
   } while (0)
 
+#define vector_at(vector, index)   \
+    (vector)->data[index]
+
 #define vector_clear(vector)                                \
     do {                                                    \
         free((vector)->data);                               \
