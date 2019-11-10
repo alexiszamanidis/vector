@@ -35,4 +35,27 @@
         expand = SUCCESS;                                                                                                   \
     }
 
+#define vector_push_at_nth_position(vector, value, position)                                                                \
+  do {                                                                                                                      \
+    char *source, *dest;                                                                                                    \
+    int expand, size, decrement_position = position-1;                                                                      \
+    /* if the position is valid */                                                                                          \
+    if( (decrement_position >= 0) && (decrement_position <= ((vector)->length)) ) {                                         \
+        vector_expand(vector,expand);                                                                                       \
+        /* if the expand was successful, do the push */                                                                     \
+        if( expand == SUCCESS ) {                                                                                           \
+            dest = (char *)(vector)->data + (decrement_position + 1) * (vector)->data_size;                                 \
+            source = (char *)(vector)->data + decrement_position * (vector)->data_size;                                     \
+            size = ((vector)->length - decrement_position) * (vector)->data_size;                                           \
+            memmove(dest,source,size);                                                                                      \
+            (vector)->data[decrement_position] = value;                                                                     \
+            (vector)->length++;                                                                                             \
+        }                                                                                                                   \
+        else                                                                                                                \
+            printf("Could not expand. Push at < %d > position failed\n",position);                                          \
+    }                                                                                                                       \
+    else                                                                                                                    \
+        printf("Wrong position < %d >.\n",position);                                                                        \
+  } while (0)
+
 #endif

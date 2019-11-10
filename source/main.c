@@ -9,5 +9,8 @@ int main(void) {
     
     vector_inititialize(&vector_int);
 
+    for ( int i = 0; i < 15; i++ )
+        vector_push_at_nth_position(&vector_int, 10+i, i+1);
+
     return SUCCESS;
 }
