@@ -58,4 +58,12 @@
         printf("Wrong position < %d >.\n",position);                                                                        \
   } while (0)
 
+#define vector_clear(vector)                                \
+    do {                                                    \
+        free((vector)->data);                               \
+        (vector)->data = NULL;                              \
+        (vector)->length = 0;                               \
+        (vector)->capacity = 0;                             \
+    } while (0)
+
 #endif
