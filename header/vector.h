@@ -35,6 +35,11 @@
         expand = SUCCESS;                                                                                                   \
     }
 
+#define vector_push_front(vector, value)                                        \
+    do {                                                                        \
+        vector_push_at_nth_position(vector, value, 1);                          \
+    } while (0)
+
 #define vector_push_at_nth_position(vector, value, position)                                                                \
   do {                                                                                                                      \
     char *source, *dest;                                                                                                    \
