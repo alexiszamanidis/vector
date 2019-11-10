@@ -20,9 +20,9 @@ int main(void) {
     }
     printf("\n");
 
-    vector_push_front(&vector_int,3);
-    vector_push_front(&vector_int,2);
-    vector_push_front(&vector_int,1);
+    vector_push_back(&vector_int,3);
+    vector_push_back(&vector_int,2);
+    vector_push_back(&vector_int,1);
 
     for ( int i = 0; i < vector_int.length ; i++ ) {
       value_int = vector_at(&vector_int, i);
