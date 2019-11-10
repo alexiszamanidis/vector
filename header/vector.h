@@ -88,6 +88,11 @@
         vector_erase_from_nth_position(vector, 1);                              \
     } while (0)
 
+#define vector_erase_back(vector)                                               \
+    do {                                                                        \
+        vector_erase_from_nth_position(vector, (vector)->length);               \
+    } while (0)
+
 #define vector_at(vector, index)   \
     (vector)->data[index]
 

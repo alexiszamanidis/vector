@@ -20,9 +20,9 @@ int main(void) {
     }
     printf("\n");
 
-    vector_erase_front(&vector_int);
-    vector_erase_front(&vector_int);
-    vector_erase_front(&vector_int);
+    vector_erase_back(&vector_int);
+    vector_erase_back(&vector_int);
+    vector_erase_back(&vector_int);
 
     for ( int i = 0; i < vector_int.length ; i++ ) {
       value_int = vector_at(&vector_int, i);
