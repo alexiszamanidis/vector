@@ -11,7 +11,7 @@ int main(void) {
 
     vector_inititialize(&vector_int);
 
-    for ( int i = 0; i < 15; i++ )
+    for ( int i = 0; i < 10; i++ )
         vector_push_at_nth_position(&vector_int, 10+i, i+1);
 
     for ( int i = 0; i < vector_int.length ; i++ ) {
@@ -20,9 +20,9 @@ int main(void) {
     }
     printf("\n");
 
-    vector_push_back(&vector_int,3);
-    vector_push_back(&vector_int,2);
-    vector_push_back(&vector_int,1);
+    vector_erase_from_nth_position(&vector_int,0);
+    vector_erase_from_nth_position(&vector_int,12);
+    vector_erase_from_nth_position(&vector_int,5);
 
     for ( int i = 0; i < vector_int.length ; i++ ) {
       value_int = vector_at(&vector_int, i);

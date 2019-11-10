@@ -35,16 +35,6 @@
         expand = SUCCESS;                                                                                                   \
     }
 
-#define vector_push_front(vector, value)                                        \
-    do {                                                                        \
-        vector_push_at_nth_position(vector, value, 1);                          \
-    } while (0)
-
-#define vector_push_back(vector, value)                                         \
-    do {                                                                        \
-        vector_push_at_nth_position(vector, value, (vector)->length + 1);       \
-    } while (0)
-
 #define vector_push_at_nth_position(vector, value, position)                                                                \
   do {                                                                                                                      \
     char *source, *dest;                                                                                                    \
@@ -67,6 +57,31 @@
     else                                                                                                                    \
         printf("Wrong position < %d >.\n",position);                                                                        \
   } while (0)
+
+#define vector_push_front(vector, value)                                        \
+    do {                                                                        \
+        vector_push_at_nth_position(vector, value, 1);                          \
+    } while (0)
+
+#define vector_push_back(vector, value)                                         \
+    do {                                                                        \
+        vector_push_at_nth_position(vector, value, (vector)->length + 1);       \
+    } while (0)
+
+#define vector_erase_from_nth_position(vector, position)                                                    \
+    do {                                                                                                    \
+        char *source, *dest;                                                                                \
+        int size, decrement_position = position-1;                                                          \
+        if( (decrement_position >= 0) && (decrement_position < (vector)->length) ) {                  \
+            dest = (char *)(vector)->data + decrement_position * (vector)->data_size;                       \
+            source = (char *)(vector)->data + (decrement_position+1) * (vector)->data_size;                 \
+            size = ((vector)->length - (decrement_position+1)) * (vector)->data_size;                       \
+            memmove(dest,source,size);                                                                      \
+            (vector)->length--;                                                                             \
+        }                                                                                                   \
+        else                                                                                                \
+            printf("Wrong position < %d >.\n",position);                                                    \
+    } while (0)
 
 #define vector_at(vector, index)   \
     (vector)->data[index]
