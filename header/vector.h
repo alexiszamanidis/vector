@@ -11,4 +11,12 @@
         int data_size;         \
     }
 
+#define vector_inititialize(vector)                         \
+    do {                                                    \
+        (vector)->data = NULL;                              \
+        (vector)->length = 0;                               \
+        (vector)->capacity = 0;                             \
+        (vector)->data_size = sizeof(*((vector)->data));    \
+    } while (0)
+
 #endif
