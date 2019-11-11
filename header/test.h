@@ -6,5 +6,6 @@
 
 void vector_inititialize_test();
 void vector_expand_test();
+void vector_push_at_nth_position_test();
 
 #endif

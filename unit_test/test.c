@@ -28,3 +28,17 @@ void vector_expand_test() {
 
     vector_clear(&vector_int);
 }
+
+void vector_push_at_nth_position_test() {
+    vector(int) vector_int;
+    vector_inititialize(&vector_int);
+    
+    // push 100 elements
+    for ( int i = 0; i < 100; i++ )
+        vector_push_at_nth_position(&vector_int, i, i+1);
+    // check pushed elements
+    for ( int i = 0; i < 100; i++ )
+        CU_ASSERT( vector_int.data[i] == i );
+
+    vector_clear(&vector_int);
+}
