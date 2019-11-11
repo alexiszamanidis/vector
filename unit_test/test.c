@@ -163,3 +163,26 @@ void vector_clear_test() {
     CU_ASSERT( vector_int.length == 0 );
     CU_ASSERT( vector_int.capacity == 0 );
 }
+
+void vector_struct_test() {
+    struct coordinates {
+        int x;
+        int y;
+    };
+    struct coordinates coordinates;
+    vector(struct coordinates) vector_coordinates;
+    vector_inititialize(&vector_coordinates);
+
+    for ( int i = 0; i < 15; i++ )
+        vector_push_back(&vector_coordinates, ((struct coordinates){.x = i, .y = i}));
+    printf("\n{");
+    for ( int i = 0; i < vector_coordinates.length ; i++ ) {
+        coordinates = vector_at(&vector_coordinates, i);
+        if(vector_coordinates.length != i+1)
+            printf("%d %d, ", coordinates.x, coordinates.y);
+        else
+            printf("%d %d}\n", coordinates.x, coordinates.y);
+    }
+
+    vector_clear(&vector_coordinates);
+}

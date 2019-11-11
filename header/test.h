@@ -14,5 +14,6 @@ void vector_erase_front_test();
 void vector_erase_back_test();
 void vector_at_test();
 void vector_clear_test();
+void vector_struct_test();
 
 #endif
