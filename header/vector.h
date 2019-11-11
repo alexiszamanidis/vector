@@ -72,7 +72,7 @@
     do {                                                                                                    \
         char *source, *dest;                                                                                \
         int size, decrement_position = position-1;                                                          \
-        if( (decrement_position >= 0) && (decrement_position < (vector)->length) ) {                  \
+        if( (decrement_position >= 0) && (decrement_position < (vector)->length) ) {                        \
             dest = (char *)(vector)->data + decrement_position * (vector)->data_size;                       \
             source = (char *)(vector)->data + (decrement_position+1) * (vector)->data_size;                 \
             size = ((vector)->length - (decrement_position+1)) * (vector)->data_size;                       \

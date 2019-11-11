@@ -36,6 +36,7 @@
 *.x86_64
 *.hex
 vector
+test
 
 # Debug files
 *.dSYM/
@@ -51,3 +52,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# vscode
+.vscode
