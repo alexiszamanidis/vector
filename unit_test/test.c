@@ -78,13 +78,36 @@ void vector_erase_from_nth_position_test() {
     // push 100 elements
     for ( int i = 0; i < 100; i++ )
         vector_push_back(&vector_int, i);
-        
+
     vector_erase_from_nth_position(&vector_int,100);
     CU_ASSERT( vector_int.length == 99 );
 
     vector_erase_from_nth_position(&vector_int,1);
     CU_ASSERT( vector_int.length == 98 );
     CU_ASSERT( vector_int.data[0] == 1 );
+
+    vector_clear(&vector_int);
+}
+
+void vector_erase_front_test() {
+    vector(int) vector_int;
+    vector_inititialize(&vector_int);
+    
+    // push 100 elements
+    for ( int i = 0; i < 100; i++ )
+        vector_push_back(&vector_int, i);
+        
+    vector_erase_front(&vector_int);
+    CU_ASSERT( vector_int.length == 99 );
+    CU_ASSERT( vector_int.data[0] == 1 );
+
+    vector_erase_front(&vector_int);
+    CU_ASSERT( vector_int.length == 98 );
+    CU_ASSERT( vector_int.data[0] == 2 );
+
+    vector_erase_front(&vector_int);
+    CU_ASSERT( vector_int.length == 97 );
+    CU_ASSERT( vector_int.data[0] == 3 );
 
     vector_clear(&vector_int);
 }
