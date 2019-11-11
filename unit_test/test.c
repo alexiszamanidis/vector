@@ -13,3 +13,18 @@ void vector_inititialize_test() {
 
     vector_clear(&vector_int);
 }
+
+void vector_expand_test() {
+    vector(int) vector_int;
+    vector_inititialize(&vector_int);
+    int expand;
+
+    vector_expand(&vector_int,expand);
+
+    CU_ASSERT( expand == SUCCESS );
+    CU_ASSERT( vector_int.capacity == 4 );
+    CU_ASSERT( vector_int.length == 0 );
+    CU_ASSERT( vector_int.data_size == 4 );
+
+    vector_clear(&vector_int);
+}

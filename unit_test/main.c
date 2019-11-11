@@ -21,6 +21,11 @@ int main(void) {
         return CU_get_error();
     }
 
+    if (NULL == CU_add_test(pSuite, "vector_expand_test", vector_expand_test)) {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
+
     CU_basic_set_mode(CU_BRM_VERBOSE);
     CU_basic_run_tests();
     CU_cleanup_registry();

@@ -5,5 +5,6 @@
 #include <CUnit/Basic.h>
 
 void vector_inititialize_test();
+void vector_expand_test();
 
 #endif
