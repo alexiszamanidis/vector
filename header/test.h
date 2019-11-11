@@ -11,5 +11,6 @@ void vector_push_front_test();
 void vector_push_back_test();
 void vector_erase_from_nth_position_test();
 void vector_erase_front_test();
+void vector_erase_back_test();
 
 #endif
