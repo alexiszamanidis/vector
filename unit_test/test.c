@@ -56,3 +56,17 @@ void vector_push_front_test() {
 
     vector_clear(&vector_int);
 }
+
+void vector_push_back_test() {
+    vector(int) vector_int;
+    vector_inititialize(&vector_int);
+    
+    // push 100 elements
+    for ( int i = 0; i < 100; i++ )
+        vector_push_back(&vector_int, i);
+    // check pushed elements
+    for ( int i = 0; i < 100; i++ )
+        CU_ASSERT( vector_int.data[i] == i );
+
+    vector_clear(&vector_int);
+}
