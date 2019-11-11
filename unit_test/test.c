@@ -148,3 +148,18 @@ void vector_at_test() {
 
     vector_clear(&vector_int);
 }
+
+void vector_clear_test() {
+    vector(int) vector_int;
+    vector_inititialize(&vector_int);
+
+    // push 100 elements
+    for ( int i = 0; i < 100; i++ )
+        vector_push_back(&vector_int, i);
+
+    vector_clear(&vector_int);
+
+    CU_ASSERT( vector_int.data == NULL );
+    CU_ASSERT( vector_int.length == 0 );
+    CU_ASSERT( vector_int.capacity == 0 );
+}
