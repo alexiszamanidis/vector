@@ -131,3 +131,20 @@ void vector_erase_back_test() {
 
     vector_clear(&vector_int);
 }
+
+void vector_at_test() {
+    vector(int) vector_int;
+    vector_inititialize(&vector_int);
+    int value_int;
+
+    // push 100 elements
+    for ( int i = 0; i < 100; i++ )
+        vector_push_back(&vector_int, i);
+        
+    for ( int i = 0; i < vector_int.length ; i++ ) {
+        value_int = vector_at(&vector_int, i);
+        CU_ASSERT( vector_int.data[i] == value_int );
+    }
+
+    vector_clear(&vector_int);
+}
