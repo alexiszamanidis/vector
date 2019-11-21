@@ -164,6 +164,23 @@ void vector_clear_test() {
     CU_ASSERT( vector_int.capacity == 0 );
 }
 
+void vector_for_each_test() {
+    int value_int, i;
+    vector(int) vector_int;
+    vector_inititialize(&vector_int);
+
+    // push 100 elements
+    for ( i = 0; i < 100; i++ )
+        vector_push_back(&vector_int, i);
+
+    vector_for_each(&vector_int,value_int) {
+        CU_ASSERT( value_int == vector_at(&vector_int,i) );
+        i++;
+    }
+
+    vector_clear(&vector_int);
+}
+
 void vector_struct_test() {
     struct coordinates {
         int x;

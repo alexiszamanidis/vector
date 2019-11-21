@@ -65,6 +65,11 @@ int main(void) {
         CU_cleanup_registry();
         return CU_get_error();
     }
+    
+    if (NULL == CU_add_test(pSuite, "vector_for_each_test", vector_for_each_test)) {
+        CU_cleanup_registry();
+        return CU_get_error();
+    }
 
     if (NULL == CU_add_test(pSuite, "vector_struct_test", vector_struct_test)) {
         CU_cleanup_registry();
