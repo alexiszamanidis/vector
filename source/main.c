@@ -14,20 +14,16 @@ int main(void) {
     for ( int i = 0; i < 10; i++ )
         vector_push_at_nth_position(&vector_int, 10+i, i+1);
 
-    for ( int i = 0; i < vector_int.length ; i++ ) {
-      value_int = vector_at(&vector_int, i);
-      printf("%d ", value_int);
-    }
+    vector_for_each(&vector_int, value_int)
+        printf("%d ", value_int);
     printf("\n");
 
     vector_erase_back(&vector_int);
     vector_erase_back(&vector_int);
     vector_erase_back(&vector_int);
 
-    for ( int i = 0; i < vector_int.length ; i++ ) {
-      value_int = vector_at(&vector_int, i);
-      printf("%d ", value_int);
-    }
+    vector_for_each(&vector_int, value_int)
+        printf("%d ", value_int);
     printf("\n");
 
     vector_clear(&vector_int);
