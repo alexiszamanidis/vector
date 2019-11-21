@@ -15,6 +15,7 @@
     #define vector_erase_back(vector)
     #define vector_at(vector, index)
     #define vector_clear(vector)
+    #define vector_for_each(vector, value)
 ```
 
 ## Unit Testing
@@ -28,4 +29,4 @@ CUnit is built as a static library which is linked with the user's testing code.
  Non-interactive               | Non-interactive                | Interactive               | Interactive
 
 ### Instalation Instructions
-* Install CUnit Libraries: $ apt-get install libcunit1 libcunit1-doc libcunit1-dev
+* Install CUnit Libraries: $ sudo apt-get install libcunit1-dev libcunit1-doc libcunit1
