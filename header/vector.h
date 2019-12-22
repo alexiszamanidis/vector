@@ -67,9 +67,17 @@
         vector_push_at_nth_position(vector, value, 1);                          \
     } while (0)
 
-#define vector_push_back(vector, value)                                         \
-    do {                                                                        \
-        vector_push_at_nth_position(vector, value, (vector)->length + 1);       \
+#define vector_push_back(vector, value)                                                                     \
+    do {                                                                                                    \
+        int expand;                                                                                         \
+        vector_expand(vector,expand);                                                                       \
+        /* if the expand was successful, do the push */                                                     \
+        if( expand == SUCCESS ) {                                                                           \
+            (vector)->data[(vector)->length] = value;                                                       \
+            (vector)->length++;                                                                             \
+        }                                                                                                   \
+        else                                                                                                \
+            printf("Could not expand. Push back failed\n");                                                 \
     } while (0)
 
 #define vector_erase_from_nth_position(vector, position)                                                    \
