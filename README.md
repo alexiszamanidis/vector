@@ -39,5 +39,12 @@ CUnit is built as a static library which is linked with the user's testing code.
  Output to xml file            | Flexible programming interface | Console interface (ansi C)| Graphical interface (Unix)
  Non-interactive               | Non-interactive                | Interactive               | Interactive
 
+### Execution Instructions
+
+* Compile: make
+* Execute demo: valgrind ./vector
+* Execute test: valgrind ./test
+* Clean: make clean
+
 ### Instalation Instructions
 * Install CUnit Libraries: $ sudo apt-get install libcunit1-dev libcunit1-doc libcunit1
