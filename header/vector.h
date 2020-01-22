@@ -62,9 +62,22 @@
             printf("Wrong position < %d >.\n",position);                                                                        \
     } while (0)
 
-#define vector_push_front(vector, value)                                        \
-    do {                                                                        \
-        vector_push_at_nth_position(vector, value, 1);                          \
+#define vector_push_front(vector, value)                                                                    \
+    do {                                                                                                    \
+        char *source, *dest;                                                                                \
+        int expand, size;                                                                                   \
+        vector_expand(vector,expand);                                                                       \
+        /* if the expand was successful, do the push */                                                     \
+        if( expand == SUCCESS ) {                                                                           \
+            dest = (char *)(vector)->data + (vector)->data_size;                                            \
+            source = (char *)(vector)->data;                                                                \
+            size = ((vector)->length) * (vector)->data_size;                                                \
+            memmove(dest,source,size);                                                                      \
+            (vector)->data[0] = value;                                                                      \
+            (vector)->length++;                                                                             \
+        }                                                                                                   \
+        else                                                                                                \
+            printf("Could not expand. Push front failed\n");                                                \
     } while (0)
 
 #define vector_push_back(vector, value)                                                                     \
