@@ -44,6 +44,6 @@
 ```
     $ sudo apt-get install libcunit1-dev libcunit1-doc libcunit1
     $ make
-    $ valgrind ./vector
-    $ valgrind ./test
+    $ cd source         || $ cd unit_tests
+    $ valgrind ./vector || $ valgrind ./test
 ```
