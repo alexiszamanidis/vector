@@ -32,19 +32,18 @@
 ## Unit Testing
 #### [CUnit](http://cunit.sourceforge.net/) is a lightweight system for writing, administering, and running unit tests in C.  It provides C programmers a basic testing functionality with a flexible variety of user interfaces.
 
-CUnit is built as a static library which is linked with the user's testing code.  It uses a simple framework for building test structures, and provides a rich set of assertions for testing common data types.   In addition, several different interfaces are provided for running tests and reporting results. These interfaces currently include:
+### Installing && Updating
 
- Automated                     | Basic                          | Console                   | Curses
--------------------------------|--------------------------------|---------------------------|---------------------------
- Output to xml file            | Flexible programming interface | Console interface (ansi C)| Graphical interface (Unix)
- Non-interactive               | Non-interactive                | Interactive               | Interactive
+```
+    $ git clone https://github.com/ZamanidisAlexios/vector.git
+    $ git pull
+```
 
-### Execution Instructions
+### Instalation && Execution instructions
 
-* Compile: make
-* Execute demo: valgrind ./vector
-* Execute test: valgrind ./test
-* Clean: make clean
-
-### Instalation Instructions
-* Install CUnit Libraries: $ sudo apt-get install libcunit1-dev libcunit1-doc libcunit1
+```
+    $ sudo apt-get install libcunit1-dev libcunit1-doc libcunit1
+    $ make
+    $ valgrind ./vector
+    $ valgrind ./test
+```
