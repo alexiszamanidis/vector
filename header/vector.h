@@ -110,7 +110,13 @@
 
 #define vector_erase_front(vector)                                              \
     do {                                                                        \
-        vector_erase_from_nth_position(vector, 1);                              \
+        char *source, *dest;                                                    \
+        int size;                                                               \
+        dest = (char *)(vector)->data;                                          \
+        source = (char *)(vector)->data +  (vector)->data_size;                 \
+        size = ((vector)->length - 1) * (vector)->data_size;                    \
+        memmove(dest,source,size);                                              \
+        (vector)->length--;                                                     \
     } while (0)
 
 #define vector_erase_back(vector)                                               \
