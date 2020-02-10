@@ -35,7 +35,7 @@
 ### Installing && Updating
 
 ```
-    $ git clone https://github.com/ZamanidisAlexios/vector.git
+    $ git clone https://github.com/alexiszamanidis/vector.git
     $ git pull
 ```
 
