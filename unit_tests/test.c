@@ -35,7 +35,7 @@ void vector_push_at_nth_position_test() {
     
     // push 100 elements
     for ( int i = 0; i < 100; i++ )
-        vector_push_at_nth_position(&vector_int, i, i+1);
+        vector_push_at_nth_position(&vector_int, i, i);
     // check pushed elements
     for ( int i = 0; i < 100; i++ )
         CU_ASSERT( vector_int.data[i] == i );
@@ -79,10 +79,10 @@ void vector_erase_from_nth_position_test() {
     for ( int i = 0; i < 100; i++ )
         vector_push_back(&vector_int, i);
 
-    vector_erase_from_nth_position(&vector_int,100);
+    vector_erase_from_nth_position(&vector_int,99);
     CU_ASSERT( vector_int.length == 99 );
-
-    vector_erase_from_nth_position(&vector_int,1);
+    
+    vector_erase_from_nth_position(&vector_int,0);
     CU_ASSERT( vector_int.length == 98 );
     CU_ASSERT( vector_int.data[0] == 1 );
 

@@ -42,17 +42,17 @@
 #define vector_push_at_nth_position(vector, value, position)                                                \
     do {                                                                                                    \
         char *source, *dest;                                                                                \
-        int expand, size, decrement_position = position-1;                                                  \
+        int expand, size;                                                                                   \
         /* if the position is valid */                                                                      \
-        if( (decrement_position >= 0) && (decrement_position <= ((vector)->length)) ) {                     \
+        if( (position >= 0) && (position <= ((vector)->length)) ) {                                         \
             vector_expand(vector,expand);                                                                   \
             /* if the expand was successful, do the push */                                                 \
             if( expand == SUCCESS ) {                                                                       \
-                dest = (char *)(vector)->data + (decrement_position + 1) * (vector)->data_size;             \
-                source = (char *)(vector)->data + decrement_position * (vector)->data_size;                 \
-                size = ((vector)->length - decrement_position) * (vector)->data_size;                       \
+                dest = (char *)(vector)->data + (position + 1) * (vector)->data_size;                       \
+                source = (char *)(vector)->data + position * (vector)->data_size;                           \
+                size = ((vector)->length - position) * (vector)->data_size;                                 \
                 memmove(dest,source,size);                                                                  \
-                (vector)->data[decrement_position] = value;                                                 \
+                (vector)->data[position] = value;                                                           \
                 (vector)->length++;                                                                         \
             }                                                                                               \
             else                                                                                            \
@@ -96,11 +96,11 @@
 #define vector_erase_from_nth_position(vector, position)                                                    \
     do {                                                                                                    \
         char *source, *dest;                                                                                \
-        int size, decrement_position = position-1;                                                          \
-        if( (decrement_position >= 0) && (decrement_position < (vector)->length) ) {                        \
-            dest = (char *)(vector)->data + decrement_position * (vector)->data_size;                       \
-            source = (char *)(vector)->data + (decrement_position+1) * (vector)->data_size;                 \
-            size = ((vector)->length - (decrement_position+1)) * (vector)->data_size;                       \
+        int size;                                                                                           \
+        if( (position >= 0) && (position < (vector)->length) ) {                                            \
+            dest = (char *)(vector)->data + position * (vector)->data_size;                                 \
+            source = (char *)(vector)->data + (position+1) * (vector)->data_size;                           \
+            size = ((vector)->length - (position+1)) * (vector)->data_size;                                 \
             memmove(dest,source,size);                                                                      \
             (vector)->length--;                                                                             \
         }                                                                                                   \
