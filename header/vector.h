@@ -149,7 +149,7 @@
         (vector)->capacity = 0;                             \
     } while (0)
 
-#define vector_for_each(vector, value)                                              \
-    for ( int i = 0 ; i < (vector)->length && (value = (vector)->data[i]) ; i++)    \
+#define vector_for_each(vector, value)                                                  \
+    for ( int i = 0 ; (i < (vector)->length) && (value = (vector)->data[i]) ; i++)      \
 
 #endif

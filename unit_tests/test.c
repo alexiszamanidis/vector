@@ -2,6 +2,13 @@
 #include "../header/vector.h"
 #include "../header/test.h"
 
+void add_test(CU_pSuite pSuite, const char* strName, CU_TestFunc pTestFunc) {
+    if (NULL == CU_add_test(pSuite, strName, pTestFunc)) {
+        CU_cleanup_registry();
+        exit(FAILURE);
+    }
+}
+
 void vector_inititialize_test() {
     vector(int) vector_int;
     vector_inititialize(&vector_int);
@@ -192,13 +199,11 @@ void vector_struct_test() {
 
     for ( int i = 0; i < 15; i++ )
         vector_push_back(&vector_coordinates, ((struct coordinates){.x = i, .y = i}));
-    printf("\n{");
+
     for ( int i = 0; i < vector_coordinates.length ; i++ ) {
         coordinates = vector_at(&vector_coordinates, i);
-        if(vector_coordinates.length != i+1)
-            printf("%d %d, ", coordinates.x, coordinates.y);
-        else
-            printf("%d %d}\n", coordinates.x, coordinates.y);
+        CU_ASSERT( i == coordinates.x );
+        CU_ASSERT( i == coordinates.y );
     }
 
     vector_clear(&vector_coordinates);
