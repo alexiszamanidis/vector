@@ -2,7 +2,7 @@
 
 #### Vectors are same as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted, with their storage being handled automatically by the container.
 
-![vector](https://user-images.githubusercontent.com/48658768/68430241-621e8900-01b8-11ea-8272-990ba8d0f950.png)
+![vector](https://user-images.githubusercontent.com/48658768/75608959-0bdda900-5b0d-11ea-9a19-e38da7f41a70.png)
 
 ## Macro
 #### A macro is a name given to a block of C statements as a pre-processor directive. Being a pre-processor, the block of code is communicated to the compiler before entering into the actual coding (main () function). A macro is defined with the preprocessor directive, #define.
@@ -43,7 +43,7 @@
 
 ```
     $ sudo apt-get install libcunit1-dev libcunit1-doc libcunit1
-    $ make
-    $ cd source         || $ cd unit_tests
-    $ valgrind ./vector || $ valgrind ./test
+    $ cd source         || $ cd tests
+    $ make              || $ make            || $ ./run_tests.sh
+    $ valgrind ./vector || $ valgrind ./test 
 ```

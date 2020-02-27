@@ -1,14 +1,14 @@
-#ifndef vector_H
-#define vector_H
+#ifndef vector_h_
+#define vector_h_
 
 #include "./header.h"
 
-#define vector(datatype)       \
-    struct {                   \
-        datatype *data;        \
-        int length;            \
-        int capacity;          \
-        int data_size;         \
+#define vector(datatype)        \
+    struct {                    \
+        datatype *data;         \
+        int length;             \
+        int capacity;           \
+        int data_size;          \
     }
 
 #define vector_inititialize(vector)                         \

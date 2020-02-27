@@ -30,7 +30,7 @@ int main(void) {
     add_test(pSuite, "vector_for_each_test", vector_for_each_test);
     add_test(pSuite, "vector_struct_test", vector_struct_test);
 
-    /* Run all tests using the CUnit Basic interface */
+    // run all tests using the CUnit Basic interface
     CU_basic_set_mode(CU_BRM_VERBOSE);
     CU_basic_run_tests();
     CU_cleanup_registry();

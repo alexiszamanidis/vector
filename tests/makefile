@@ -9,7 +9,8 @@ all: main usage
 
 main: $(OBJS) main.c
 	$(CC) $(CFLAGS) $(OBJS) main.c $(CUNIT) -o $(EXEC)
-
+	rm $(RMFLAGS) $(OBJS)
+	
 test.o: test.c
 		$(CC) $(CFLAGS) $(CUNIT) -c test.c
 

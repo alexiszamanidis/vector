@@ -1,5 +1,5 @@
-#ifndef test_H
-#define test_H
+#ifndef test_h_
+#define test_h_
 
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
