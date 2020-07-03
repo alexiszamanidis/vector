@@ -30,20 +30,28 @@
 ```
 
 ## Unit Testing
-#### [CUnit](http://cunit.sourceforge.net/) is a lightweight system for writing, administering, and running unit tests in C.  It provides C programmers a basic testing functionality with a flexible variety of user interfaces.
+[CUnit](http://cunit.sourceforge.net/) is a lightweight system for writing, administering, and running unit tests in C.  
+It provides C programmers a basic testing functionality with a flexible variety of user interfaces.
 
-### Installing && Updating
-
-```
-    $ git clone https://github.com/alexiszamanidis/vector.git
-    $ git pull
-```
-
-### Instalation && Execution instructions
+### Instalation instructions
 
 ```
     $ sudo apt-get install libcunit1-dev libcunit1-doc libcunit1
-    $ cd source         || $ cd tests
-    $ make              || $ make            || $ ./run_tests.sh
-    $ valgrind ./vector || $ valgrind ./test 
+```
+
+### Execution instructions
+
+Run all the tests
+
+```
+    $ cd tests
+    $ ./run_tests.sh
+```
+
+Run demo
+
+```
+    $ cd source
+    $ make
+    $ valgrind ./vector
 ```

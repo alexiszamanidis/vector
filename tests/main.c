@@ -7,7 +7,7 @@ int main(void) {
 
     // initialize the CUnit test registry
     if( CU_initialize_registry() != CUE_SUCCESS )
-      return CU_get_error();
+        return CU_get_error();
 
     // add a suite to the registry
     pSuite = CU_add_suite("vector_test_suite", 0, 0);
