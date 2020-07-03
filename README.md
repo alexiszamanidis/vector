@@ -44,7 +44,7 @@ It provides C programmers a basic testing functionality with a flexible variety 
 Run all the tests
 
 ```
-    $ cd tests
+    $ cd tests/scripts
     $ ./run_tests.sh
 ```
 

@@ -1,13 +1,7 @@
-#include "../header/header.h"
-#include "../header/vector.h"
+#include "../../header/header.h"
+#include "../../header/vector.h"
 #include "../header/test.h"
-
-void add_test(CU_pSuite pSuite, const char* strName, CU_TestFunc pTestFunc) {
-    if (NULL == CU_add_test(pSuite, strName, pTestFunc)) {
-        CU_cleanup_registry();
-        exit(FAILURE);
-    }
-}
+#include "../header/cunit.h"
 
 void vector_inititialize_test() {
     vector(int) vector_int;

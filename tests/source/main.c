@@ -1,6 +1,7 @@
-#include "../header/header.h"
-#include "../header/vector.h"
+#include "../../header/header.h"
+#include "../../header/vector.h"
 #include "../header/test.h"
+#include "../header/cunit.h"
 
 int main(void) {
     CU_pSuite pSuite = NULL;
