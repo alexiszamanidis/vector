@@ -150,6 +150,6 @@
     } while (0)
 
 #define vector_for_each(vector, value)                                                  \
-    for ( int i = 0 ; (i < (vector)->length) && (value = (vector)->data[i]) ; i++)      \
+    for ( int i = 0 ; (i < (vector)->length) && (((value) = (vector)->data[i]), 1) ; i++)
 
 #endif

@@ -200,5 +200,11 @@ void vector_struct_test() {
         CU_ASSERT( i == coordinates.y );
     }
 
+    vector_for_each(&vector_coordinates,coordinates) {
+        struct coordinates coordinates_b = vector_at(&vector_coordinates, i);
+        CU_ASSERT( coordinates_b.x == coordinates.x );
+        CU_ASSERT( coordinates_b.y == coordinates.y );
+    }
+
     vector_clear(&vector_coordinates);
 }
