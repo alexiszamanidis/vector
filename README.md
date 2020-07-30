@@ -30,7 +30,7 @@
 ```
 
 ## Unit Testing
-[CUnit](http://cunit.sourceforge.net/) is a lightweight system for writing, administering, and running unit tests in C.  
+[CUnit](http://cunit.sourceforge.net/) is a lightweight system for writing, administering, and running unit tests in C. 
 It provides C programmers a basic testing functionality with a flexible variety of user interfaces.
 
 ### Instalation instructions
@@ -41,14 +41,14 @@ It provides C programmers a basic testing functionality with a flexible variety 
 
 ### Execution instructions
 
-Run all the tests
+Run **all the tests**
 
 ```
     $ cd tests/scripts
     $ ./run_tests.sh
 ```
 
-Run demo
+Run **demo**
 
 ```
     $ cd source
